@@ -1,9 +1,9 @@
 let buttons= document.getElementById('buttons');
-let number=document.getElementById('adicionarNumero(7)');
-console.log(number);
+let number=document.getElementById ("adicionarNumero(7)");
+
 
 number.addEventListener("click",function(){
 
-    console.log("teste");
+    console.log(number);
 });
 
