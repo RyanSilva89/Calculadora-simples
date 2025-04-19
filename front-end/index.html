@@ -11,26 +11,26 @@
            <h1>Calculadora</h1>
            <div class="tela" id="tela">0</div>
            
-           <div class="botoes">
-               <button class="btn" onclick="adicionarNumero('7')">7</button>
-               <button class="btn" onclick="adicionarNumero('8')">8</button>
-               <button class="btn" onclick="adicionarNumero('9')">9</button>
-               <button class="btn operacao" onclick="adicionarOperacao('/')">/</button>
+           <div class="botoes" id="buttons">
+               <button class="btn numero" data-numero="7">7</button>
+               <button class="btn numero" data-numero="8">8</button>
+               <button class="btn numero" data-numero="9">9</button>
+               <button class="btn operacao" data-operacao="/">/</button>
    
-               <button class="btn" onclick="adicionarNumero('4')">4</button>
-               <button class="btn" onclick="adicionarNumero('5')">5</button>
-               <button class="btn" onclick="adicionarNumero('6')">6</button>
-               <button class="btn operacao" onclick="adicionarOperacao('*')">*</button>
+               <button class="btn numero" data-numero="4">4</button>
+               <button class="btn numero" data-numero="5">5</button>
+               <button class="btn numero" data-numero="6">6</button>
+               <button class="btn operacao" data-operacao="*">*</button>
    
-               <button class="btn" onclick="adicionarNumero('1')">1</button>
-               <button class="btn" onclick="adicionarNumero('2')">2</button>
-               <button class="btn" onclick="adicionarNumero('3')">3</button>
-               <button class="btn operacao" onclick="adicionarOperacao('-')">-</button>
+               <button class="btn numero" data-numero="1">1</button>
+               <button class="btn numero" data-numero="2">2</button>
+               <button class="btn numero" data-numero="3">3</button>
+               <button class="btn operacao" data-operacao="-">-</button>
    
-               <button class="btn" onclick="adicionarNumero('0')">0</button>
-               <button class="btn" onclick="limparTela()">C</button>
-               <button class="btn" onclick="calcular()">=</button>
-               <button class="btn operacao" onclick="adicionarOperacao('+')">+</button>
+               <button class="btn numero" data-numero="0">0</button>
+               <button class="btn limparTela" id="limparTela">C</button>
+               <button class="btn calcular" id="calcular">=</button>
+               <button class="btn operacao" data-operacao="+">+</button>
            </div>
        </div>
    
