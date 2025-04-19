@@ -1,9 +1,14 @@
-let buttons= document.getElementById('buttons');
-let number=document.getElementById('adicionarNumero(7)');
-console.log(number);
+console.log("app.js carregado!");
+console.log("JavaScript funcionando!");
 
-number.addEventListener("click",function(){
+function adicionarNumero(valor){
+    console.log(valor);
+    const tela = document.getElementById('tela');
+    if(tela.innerText === '0'){
+        tela.innerText = valor;
 
-    console.log("teste");
-});
-
+    }else{ 
+        tela.innerText += valor;
+    }
+        
+}
