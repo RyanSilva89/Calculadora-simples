@@ -14,6 +14,7 @@
                     }
                         
                 }
+                //operaçoes dos números
                     function  AdicionarOperacao(operacao){
                     tela.innerText += `${operacao}`;
                     }
@@ -23,6 +24,7 @@
 
                             
                         }
+                        //mostrado o resultado da operação,possui restrição por divisão de zero
             function calcular(){
                 const tela = document.getElementById('tela');
                 
