@@ -3,7 +3,7 @@
                 console.log("JavaScript funcionando!");
             const botoes = document.querySelectorAll('#buttons button');
             //Adicionando um valor na tela 
-            function adicionarNumero(valor){
+            function AdicionarNumero(valor){
                     console.log(valor);
                     const tela = document.getElementById('tela');
                     if(tela.innerText === '0'){
@@ -15,11 +15,13 @@
                         
                 }
                 //operaçoes dos números
-                    function  AdicionarOperacao(operacao){
-                    tela.innerText += `${operacao}`;
-                    }
-                    //limpar tela
-                    function limparTela(limparTela){
+    function  AdicionarOperacao(operacao){
+        const tela = document.getElementById('tela');
+        tela.innerText += `${operacao}`;
+    }
+    //limpar tela
+function limparTela(){
+    const tela = document.getElementById('tela');
                         tela.innerText = '0';
 
                             
@@ -30,7 +32,7 @@
                 
                 try { 
                     const expressao = tela.innerText;
-                if(expressao.includes ( '0')){
+                if(expressao.includes ( '/0')){
                     tela.innerText = "Erro divisão por zero";
 
                 }else{
@@ -46,9 +48,9 @@
                         botoes.forEach(botao => {
                             botao.addEventListener('click',function(){
                                 if(botao.classList.contains('numero')){
-            adicionarNumero(botao.innerText);
+            AdicionarNumero(botao.innerText);
                                 }else if(botao.classList.contains('operacao')){
-                                    adicionarNumero(botao.innerText);
+                                    AdicionarOperacao(botao.innerText);
                                 }else if (botao.id === 'limparTela'){
                                     limparTela();
 
