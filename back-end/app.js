@@ -7,7 +7,9 @@
             function AdicionarNumero(valor){
                     console.log(valor);
                     const tela = document.getElementById('tela');
-                    if(tela.innerText === '0'){
+                    if(tela.innerText.includes("Erro")){
+                      tela.innerText = valor;
+                    }else if(tela.innerText === '0'){
                         tela.innerText = valor;
 
                     }else{ 
@@ -23,15 +25,20 @@ const textoAtual = tela.innerText;
 const ultimaPosicao = tela.innerText[tela.innerText.length - 1];
 const operadores = ['+','-','*','/']; // array com operadores válidos
 
+//Impedindo a digitação ao ocorrer um erro 'operadores'
+if(tela.innerText.includes("Erro")){
+    tela.innerText = operacao ;
+return;
+}
 //Impedir que o usuario digite um operador antes de um número
 if(textoAtual === '0'&&(operacao === '*'|| operacao === '/' || operacao === '+')){
 return;
 }        
-
-if (operadores.includes(ultimaPosicao)){
 //Nao adiciona um operador se o ultimo for um operador : 5++
+if (operadores.includes(ultimaPosicao)){
 return;
 }
+
 if ( textoAtual === '0'){
 tela.innerText = operacao;
 
