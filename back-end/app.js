@@ -60,19 +60,18 @@ function limparTela(){
             function calcular(){
                 const tela = document.getElementById('tela');
                 const operadores = ['+','-','*','/'];
-                try { 
-                    const expressao = tela.innerText;
-                if(expressao.includes ( '/0')){
-                    tela.innerText = "Erro divisão por zero";
-
-                }else{
+                const expressao = tela.innerText;
+                //regex para divisão por zero
+                    const divisaoPorZero = /\/0+(?![\d.])/; //irá detectar /0 / 0.0 //000 
+               if(divisaoPorZero.test(expressao)){
+                tela.innerText = "Erro: divisão por zero";
+               }else{
+                try{
                     tela.innerText = eval(expressao);
-
-                }
-                
-                } catch (error) {
+                }catch(error){
                     tela.innerText = 'Erro';
                 }
+               }
             
         }
                         botoes.forEach(botao => {
