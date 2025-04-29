@@ -1,4 +1,4 @@
-                //verificando o carregamento do arquivo JS
+               //verificando o carregamento do arquivo JS
                 console.log("app.js carregado!");
                 console.log("JavaScript funcionando!");
             const botoes = document.querySelectorAll('#buttons button');
@@ -16,25 +16,32 @@
                         
                 }
 
-                //operaçoes dos números
-    function  AdicionarOperacao(operacao){
-        const tela = document.getElementById('tela');
-        tela.innerText += `${operacao}`;
-        const ultimaPosicao = tela.innerText[tela.innerText.length - 1];
+                //operadores
+function  AdicionarOperacao(operacao){ // função 
+const tela = document.getElementById('tela');
+const textoAtual = tela.innerText;
+const ultimaPosicao = tela.innerText[tela.innerText.length - 1];
+const operadores = ['+','-','*','/']; // array com operadores válidos
+
+//Impedir que o usuario digite um operador antes de um número
+if(textoAtual === '0'&&(operacao === '*'|| operacao === '/' || operacao === '+')){
+return;
+}        
+
+if (operadores.includes(ultimaPosicao)){
+//Nao adiciona um operador se o ultimo for um operador : 5++
+return;
+}
+if ( textoAtual === '0'){
+tela.innerText = operacao;
+
+}else{
+tela.innerText += operacao;
+}
 
 
-        // array com operadores válidos
-        const operadores = ['+','-','*','/'];
-    if (operadores.includes(ultimaPosicao)){
-        //Nao adiciona um operador se o ultimo for um operador : 5++
-        return;
-    }
-    if ( tela.innerText === '0'){
-        tela.innerText = operacao;
-    }else{
-        tela.innerText += operacao;
-    }
-    }
+
+}
     //limpar tela
 function limparTela(){
     const tela = document.getElementById('tela');
@@ -45,7 +52,7 @@ function limparTela(){
                         //mostrado o resultado da operação,possui restrição por divisão de zero
             function calcular(){
                 const tela = document.getElementById('tela');
-                
+                const operadores = ['+','-','*','/'];
                 try { 
                     const expressao = tela.innerText;
                 if(expressao.includes ( '/0')){
