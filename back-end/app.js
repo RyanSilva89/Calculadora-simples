@@ -50,6 +50,19 @@ function limparTela(){
 
                             
                         }
+                        //função apagar o ultimo caractere
+                        function backspace(limparnumero){
+                            const tela= document.getElementById('tela');
+                            const textoAtual = tela.innerText;
+                            // se a tela tiver um erro voltamos para o valor inicial
+                            if(textoAtual.includes('Erro')){
+                                tela.innerText = '0' ;
+                         }else if( textoAtual.length > 1 ){
+                              tela.innerText=textoAtual.slice(0,-1);
+                        }else{
+                           tela.innerText = '0'; //caso tenha somente uma caractere
+                        }
+                    }
                         //função calcular o resultado
             function calcular(){
                 const tela = document.getElementById('tela');
@@ -81,6 +94,8 @@ function limparTela(){
 
                                 }else if(botao.id === 'calcular'){
                                     calcular();
+                                }else if (botao.id === 'backspace'){
+                                    backspace();
                                 }
                             })
                         });
