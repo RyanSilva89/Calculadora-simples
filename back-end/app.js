@@ -94,7 +94,7 @@ function limparTela(){
 
                                 }else if(botao.id === 'calcular'){
                                     calcular();
-                                }else if (botao.id === 'backspace'){
+                                }else if (botao.id === 'limparcaractere'){
                                     backspace();
                                 }
                             })
