@@ -51,7 +51,7 @@ function limparTela(){
                             
                         }
                         //função apagar o ultimo caractere
-                        function backspace(limparnumero){
+                        function backspace(){
                             const tela= document.getElementById('tela');
                             const textoAtual = tela.innerText;
                             // se a tela tiver um erro voltamos para o valor inicial
@@ -75,7 +75,7 @@ function limparTela(){
                 tela.innerText = "Erro: divisão por zero";
                }else{
                 try{
-                    tela.innerText = new Function('return' + expressao) ();
+                    tela.innerText = math.evaluate(expressao);
                     
                 }catch(error){
                     tela.innerText = 'Erro';
