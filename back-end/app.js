@@ -13,7 +13,9 @@
                         tela.innerText = valor;
 
                     }else{ 
+                      if(tela.innerText.length<12){
                         tela.innerText += valor;
+                      }
                     }
                         
                 }
@@ -38,7 +40,10 @@ return;
 if (operadores.includes(ultimaPosicao)){
 return;
 }
-tela.innerText=textoAtual === '0' ? operacao : textoAtual + operacao;
+if(tela.innerText.length < 12){
+    tela.innerText=textoAtual === '0' ? operacao : textoAtual + operacao;
+}
+
 
 
 
@@ -54,6 +59,7 @@ function limparTela(){
                         function backspace(){
                             const tela= document.getElementById('tela');
                             const textoAtual = tela.innerText;
+                            
                             // se a tela tiver um erro voltamos para o valor inicial
                             if(textoAtual.includes('Erro')){
                                 tela.innerText = '0' ;
