@@ -71,7 +71,8 @@ function limparTela(){
                            tela.innerText = '0'; //caso tenha somente uma caractere
                         }
                     }
-                        //função calcular o resultado
+                        
+                    //função calcular o resultado
             function calcular(){
                 const tela = document.getElementById('tela');
                 const operadores = ['+','-','*','/'];
@@ -84,7 +85,8 @@ function limparTela(){
                }else{
                 try{
                     tela.innerText = math.evaluate(expressao);
-                    
+                        //remove o cursor piscando ao finalizar o calculo
+                       // tela.classList.remove('cursor piscando'); desabilitado por enquanto
                 }catch(error){
                     tela.innerText = 'Erro';
                 }
@@ -105,7 +107,7 @@ function limparTela(){
                                 }else if (botao.id === 'limparcaractere'){
                                     backspace();
                                 }
+                            
                             })
-                            //remove o cursor piscando ao finalizar o calculo
-                            tela.classList.remove('cursor piscando');
+                            
                         });
