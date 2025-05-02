@@ -2,7 +2,9 @@
                 console.log("app.js carregado!");
                 console.log("JavaScript funcionando!");
             const botoes = document.querySelectorAll('#buttons button');
-            
+           
+            //limite de caracteres
+            const limiteCaractere = 12;
             //função Adicionando um valor na tela 
             function AdicionarNumero(valor){
                     console.log(valor);
@@ -13,7 +15,7 @@
                         tela.innerText = valor;
 
                     }else{ 
-                      if(tela.innerText.length<12){
+                      if(tela.innerText.length<= limiteCaractere){
                         tela.innerText += valor;
                       }
                     }
@@ -40,7 +42,7 @@ return;
 if (operadores.includes(ultimaPosicao)){
 return;
 }
-if(tela.innerText.length < 12){
+if(tela.innerText.length < limiteCaractere){
     tela.innerText=textoAtual === '0' ? operacao : textoAtual + operacao;
 }
 
@@ -59,7 +61,7 @@ function limparTela(){
                         function backspace(){
                             const tela= document.getElementById('tela');
                             const textoAtual = tela.innerText;
-                            
+
                             // se a tela tiver um erro voltamos para o valor inicial
                             if(textoAtual.includes('Erro')){
                                 tela.innerText = '0' ;
@@ -104,4 +106,6 @@ function limparTela(){
                                     backspace();
                                 }
                             })
+                            //remove o cursor piscando ao finalizar o calculo
+                            tela.classList.remove('cursor piscando');
                         });
